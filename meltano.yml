@@ -16,12 +16,11 @@ plugins:
     - about
     - stream-maps
     settings:
-    # TODO: To configure using Meltano, declare settings and their types here:
-    - name: credentials_file
-      kind: string
-      required: true
     - name: start_date
       value: '2023-07-01T00:00:00Z'
+    - name: secret_id
+      kind: string
+      required: true
   loaders:
   - name: target-jsonl
     variant: andyh1203

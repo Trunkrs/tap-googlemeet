@@ -6,11 +6,12 @@ from typing import Callable
 
 import requests
 from iso8601 import iso8601
-from datetime import datetime
 from singer_sdk import Tap
 from singer_sdk.streams import Stream
 
 import logging
+
+from tap_googlemeet.secrets_manager import get_secret, update_secret
 
 _Auth = Callable[[requests.PreparedRequest], requests.PreparedRequest]
 
@@ -21,36 +22,30 @@ from googleapiclient.discovery import build
 
 SCOPES = ['https://www.googleapis.com/auth/admin.reports.audit.readonly']
 
-def get_credentials(file, creds):
-    if os.path.exists(file):
-        try:
-            creds = Credentials.from_authorized_user_file(file, SCOPES)
-        except:
-            logging.info("Error loading credentials file")
+def get_external_credentials(config, sectret_id):
+    if not config:
+        config = get_secret(sectret_id)
+    return config
+def get_credentials(config, sectret_id):
+    creds = Credentials.from_authorized_user_info(config, SCOPES)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(file, SCOPES)
+            flow = InstalledAppFlow.from_client_config(config, scopes=SCOPES)
             creds = flow.run_local_server(port=0)
-        with open(file, 'w') as token:
-            token.write(creds.to_json())
+        update_secret(creds, sectret_id)
     return creds
 
 class GoogleMeetStream(Stream):
     """GoogleMeet stream class."""
-
-    _creds = None
-
-    def __init__(self, tap: Tap):
-        super().__init__(tap)
-        get_credentials(self.config.get('credentials_file'), self._creds)
-
+    _credentials = None
 
     def get_records(self, context: dict | None):
         replication_key = self.get_starting_replication_key_value(context)
 
-        creds = get_credentials(self.config.get('credentials_file'), self._creds)
+        self._credentials = get_external_credentials(self._credentials, self.config.get('secret_id'))
+        creds = get_credentials(self._credentials, self.config.get('secret_id'))
 
         service = build('admin', 'reports_v1', credentials=creds)
 

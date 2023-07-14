@@ -17,15 +17,15 @@ class TapGoogleMeet(Tap):
     # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
         th.Property(
-            "credentials_file",
-            th.StringType,
-            required=True,
-            description="Link to the credentials file",
-        ),
-        th.Property(
             "start_date",
             th.DateTimeType,
             required=True
+        ),
+        th.Property(
+            "secret_id",
+            th.DateTimeType,
+            required=True,
+            description="ID of an AWS Secret Manager secret containing the Google Service Account credentials",
         )
     ).to_dict()
 
