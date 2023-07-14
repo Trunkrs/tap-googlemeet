@@ -34,7 +34,7 @@ def get_credentials(config, sectret_id):
         else:
             flow = InstalledAppFlow.from_client_config(config, scopes=SCOPES)
             creds = flow.run_local_server(port=0)
-        update_secret(creds, sectret_id)
+        update_secret(config, sectret_id)
     return creds
 
 class GoogleMeetStream(Stream):

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tap-googlemeet"
-version = "0.0.1"
+version = "0.0.2"
 description = "`tap-googlemeet` is a Singer tap for GoogleMeet, built with the Meltano Singer SDK."
 readme = "README.md"
 authors = ["Hidde Stokvis"]
