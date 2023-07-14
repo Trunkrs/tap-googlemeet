@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "etag": {
+      "type": "string"
+    },
+    "actor_email": {
+      "type": "string"
+    },
+    "actor_profile_id": {
+      "type": "string"
+    },
+    "event_video_in_seconds": {
+      "type": "string"
+    },
+    "event_location_country": {
+      "type": "string"
+    },
+    "event_identifier_type": {
+      "type": "string"
+    },
+    "event_audio_send_bitrate_kbps_mean": {
+      "type": "string"
+    },
+    "event_video_send_packet_loss_max": {
+      "type": "string"
+    },
+    "event_endpoint_id": {
+      "type": "string"
+    },
+    "event_device_type": {
+      "type": "string"
+    },
+    "event_video_send_packet_loss_mean": {
+      "type": "string"
+    },
+    "event_video_recv_long_side_median_pixels": {
+      "type": "string"
+    },
+    "event_calendar_event_id": {
+      "type": "string"
+    },
+    "event_screencast_send_seconds": {
+      "type": "string"
+    },
+    "event_video_send_fps_mean": {
+      "type": "string"
+    },
+    "event_audio_send_packet_loss_max": {
+      "type": "string"
+    },
+    "event_video_recv_short_side_median_pixels": {
+      "type": "string"
+    },
+    "event_video_recv_packet_loss_mean": {
+      "type": "string"
+    },
+    "event_network_send_jitter_msec_mean": {
+      "type": "string"
+    },
+    "event_audio_recv_seconds": {
+      "type": "string"
+    },
+    "event_network_congestion": {
+      "type": "string"
+    },
+    "event_network_estimated_download_kbps_mean": {
+      "type": "string"
+    },
+    "event_audio_send_packet_loss_mean": {
+      "type": "string"
+    },
+    "event_network_transport_protocol": {
+      "type": "string"
+    },
+    "event_duration_seconds": {
+      "type": "string"
+    },
+    "event_video_send_bitrate_kbps_mean": {
+      "type": "string"
+    },
+    "event_identifier": {
+      "type": "string"
+    },
+    "event_location_region": {
+      "type": "string"
+    },
+    "event_audio_recv_packet_loss_max": {
+      "type": "string"
+    },
+    "event_video_recv_fps_mean": {
+      "type": "string"
+    },
+    "event_audio_recv_packet_loss_mean": {
+      "type": "string"
+    },
+    "event_network_recv_jitter_msec_max": {
+      "type": "string"
+    },
+    "event_organizer_email": {
+      "type": "string"
+    },
+    "event_network_recv_jitter_msec_mean": {
+      "type": "string"
+    },
+    "event_ip_address": {
+      "type": "string"
+    },
+    "event_audio_send_seconds": {
+      "type": "string"
+    },
+    "event_display_name": {
+      "type": "string"
+    },
+    "event_video_recv_seconds": {
+      "type": "string"
+    },
+    "event_network_rtt_msec_mean": {
+      "type": "string"
+    },
+    "event_video_send_long_side_median_pixels": {
+      "type": "string"
+    },
+    "event_conference_id": {
+      "type": "string"
+    },
+    "event_screencast_recv_seconds": {
+      "type": "string"
+    },
+    "event_product_type": {
+      "type": "string"
+    },
+    "event_network_estimated_upload_kbps_mean": {
+      "type": "string"
+    },
+    "event_video_send_short_side_median_pixels": {
+      "type": "string"
+    },
+    "event_video_recv_packet_loss_max": {
+      "type": "string"
+    },
+    "event_meeting_code": {
+      "type": "string"
+    },
+    "event_is_external": {
+      "type": "boolean"
+    },
+    "event_video_send_seconds": {
+      "type": "string"
+    },
+    "event_screencast_recv_long_side_median_pixels": {
+      "type": "string"
+    },
+    "event_screencast_recv_fps_mean": {
+      "type": "string"
+    },
+    "event_screencast_recv_short_side_median_pixels": {
+      "type": "string"
+    },
+    "event_screencast_recv_packet_loss_mean": {
+      "type": "string"
+    },
+    "event_screencast_recv_bitrate_kbps_mean": {
+      "type": "string"
+    },
+    "event_screencast_recv_packet_loss_max": {
+      "type": "string"
+    },
+    "event_screencast_send_bitrate_kbps_mean": {
+      "type": "string"
+    },
+    "event_screencast_send_long_side_median_pixels": {
+      "type": "string"
+    },
+    "event_screencast_send_packet_loss_mean": {
+      "type": "string"
+    },
+    "event_screencast_send_short_side_median_pixels": {
+      "type": "string"
+    },
+    "event_screencast_send_packet_loss_max": {
+      "type": "string"
+    },
+    "event_screencast_send_fps_mean": {
+      "type": "string"
+    }
+  }
+}
